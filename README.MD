@@ -18,3 +18,20 @@ Features:
 - News feeds
 - Comments
 - Pages
+
+## Models
+
+user
+
+- devise
+- username/nickname
+- job title
+- bio
+
+future
+
+- comments/messages
+- groups
+- blogs (belongs_to department)
+- manager (user belongs_to manager has_many users)
+- department (user belongs_to department has_many users)
