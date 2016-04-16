@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## User attributes
       
       t.string :username, null: false, default: ""
-      t.string :job_title,
+      t.string :job_title
       
       ## Database authenticatable
       t.string :email,              null: false, default: ""
