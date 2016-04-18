@@ -32,6 +32,6 @@ future
 
 - comments/messages
 - groups
-- blogs (belongs_to department)
+- blogs (belongs_to department through users)
 - manager (user belongs_to manager has_many users)
 - department (user belongs_to department has_many users)
