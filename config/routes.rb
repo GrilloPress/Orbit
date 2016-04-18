@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  authenticated :user do
+    root to: 'static_pages#index', as: :authenticated_root
+  end
+  root to: redirect('/users/sign_in')
 
-  root to: "static_pages#index"
   
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
