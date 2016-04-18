@@ -27,6 +27,13 @@ user
 - username/nickname
 - job title
 - bio
+- admin true/false
+
+```
+if current_user.admin?
+  # etc. etc.
+end
+```
 
 future
 
