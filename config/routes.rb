@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   root to: redirect('/users/sign_in')
 
+  resources :users
   
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
