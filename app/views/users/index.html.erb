@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
+<h1>Orbit Users</h1>
 
+<br>
 
 <table class="table table-bordered">
   <thead>
@@ -21,7 +22,7 @@
         <td><%= user.username %></td>
         <td><%= mail_to user.email, user.email %></td>
         <td><%= user.job_title %></td>
-        <td><%= link_to 'View profile', user %>, <%= link_to 'Edit', edit_user_path(user) %>, <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View profile', user %>, <%= link_to 'Edit profile', edit_user_path(user) %>, <%= link_to 'Delete profile', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

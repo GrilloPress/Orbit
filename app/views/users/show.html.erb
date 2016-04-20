@@ -1,4 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @user.username %>'s profile</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Job title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>  
+        <td><%= @user.id %></td>
+        <td><%= @user.username %></td>
+        <td><%= @user.email %></td>
+        <td><%= @user.job_title %></td>
+        <td><%= link_to 'View profile', @user %>, <%= link_to 'Edit profile', edit_user_path(@user) %>, <%= link_to 'Delete profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
