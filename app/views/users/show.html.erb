@@ -24,5 +24,9 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% content_for :right_sidebar do %>
+<ul class="list-unstyled">
+  <li><%= link_to 'Edit', edit_user_path(@user) %></li>
+  <li><%= link_to 'Back', users_path %></li>
+</ul>
+<% end %>
