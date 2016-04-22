@@ -18,7 +18,7 @@ $brand-primary:         #130742;
 // $brand-success:         #5cb85c
 // $brand-info:            #5bc0de
 // $brand-warning:         #f0ad4e
-// $brand-danger:          #d9534f
+$brand-danger:          #ED1C24;
 
 
 //== Scaffolding
@@ -394,16 +394,16 @@ $brand-primary:         #130742;
 
 //=== Inverted navbar
 // Reset inverted navbar basics
-// $navbar-inverse-color:                      lighten($gray-light, 15%)
-// $navbar-inverse-bg:                         #222
-// $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%)
+$navbar-inverse-color:                   white;
+$navbar-inverse-bg:                      $brand-primary;
+$navbar-inverse-border:                  darken($navbar-inverse-bg, 2%);
 
 // Inverted navbar links
-// $navbar-inverse-link-color:                 lighten($gray-light, 15%)
+$navbar-inverse-link-color:              white;
 // $navbar-inverse-link-hover-color:           #fff
 // $navbar-inverse-link-hover-bg:              transparent
 // $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color
-// $navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 10%)
+$navbar-inverse-link-active-bg:          darken($navbar-inverse-bg, 3%);
 // $navbar-inverse-link-disabled-color:        #444
 // $navbar-inverse-link-disabled-bg:           transparent
 
