@@ -1,12 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @user.username %>'s profile</h1>
+<hr>
 
-<table class="table table-bordered">
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+  </div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+</div>
+
+<table class="table ">
   <thead>
     <tr>
       <th>ID</th>
-      <th>Username</th>
       <th>Email</th>
       <th>Job title</th>
       <th>Actions</th>
@@ -16,10 +25,9 @@
   <tbody>
       <tr>  
         <td><%= @user.id %></td>
-        <td><%= @user.username %></td>
         <td><%= @user.email %></td>
         <td><%= @user.job_title %></td>
-        <td><%= link_to 'View profile', @user %>, <%= link_to 'Edit profile', edit_user_path(@user) %>, <%= link_to 'Delete profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit profile', edit_user_path(@user) %>, <%= link_to 'Delete profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   </tbody>
 </table>
