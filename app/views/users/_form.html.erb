@@ -11,6 +11,22 @@
     </div>
   <% end %>
 
+  <div class="form-group form-image-upload">
+    
+    <% if @user.profile_pic %>
+    
+      <%= image_tag @user.profile_pic(:thumb), class: "img-circle" %>
+      <%= f.file_field :profile_pic %>
+    
+    <% else %>
+    
+      <%= f.label :profile_pic %> 
+      <%= f.file_field :profile_pic %>
+    
+    <% end %>
+
+  </div>
+
   <div class="form-group">
     <%= f.label :username %> 
     <%= f.text_field :username, class: "form-control" %>
@@ -29,11 +45,6 @@
   <div class="form-group">
     <%= f.label :biography %> 
     <%= f.text_area :biography, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :profile_pic %> 
-    <%= f.file_field :profile_pic %>
   </div>
 
   <div class="actions">
