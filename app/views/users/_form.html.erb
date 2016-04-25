@@ -13,7 +13,7 @@
 
   <div class="form-group form-image-upload">
     
-    <% if @user.profile_pic %>
+    <% if @user.profile_pic.present? %>
     
       <%= image_tag @user.profile_pic(:thumb), class: "img-circle" %>
       <%= f.file_field :profile_pic %>
