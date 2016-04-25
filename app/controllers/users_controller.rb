@@ -20,6 +20,15 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    
+    @editor = current_user.id
+    
+    unless @editor == @user
+      flash[:alert] = "You cannot edit that user"
+      redirect_to @user
+    end
+    
+    
   end
 
   # POST /users
@@ -34,7 +43,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         
-        # x = params[:id]
+        # current_user = params[:id]
         # if current_user.id == x || current_user.admin?
         
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
