@@ -1,14 +1,16 @@
 <h1><%= @user.username %>'s profile</h1>
 <hr>
 
+<% if @user.profile_pic.present? %>
+  <%= image_tag @user.profile_pic(:thumb), class: "img-circle pull-left" %>
+<% end %>
+<p><%= @user.biography %></p>
+<p class="clearfix"></p>
+
 <div class="panel panel-primary">
   <!-- Default panel contents -->
   <div class="panel-heading">
   </div>
-  <div class="panel-body">
-    <p><%= @user.biography %></p>
-  </div>
-  
   <table class="table ">
   <thead>
     <tr>
@@ -21,7 +23,7 @@
 
   <tbody>
       <tr>  
-        <td><%= @user.id %></td>
+        <td><%= link_to @user.id, @user %></td>
         <td><%= @user.email %></td>
         <td><%= @user.job_title %></td>
         <td><%= link_to 'Edit profile', edit_user_path(@user) %>, <%= link_to 'Delete profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,10 +33,6 @@
 </div>
 
 <% content_for :right_sidebar do %>
-
-<% if @user.profile_pic.present? %>
-  <%= image_tag @user.profile_pic.url, class: "img-responsive img-circle" %>
-<% end %>
 
 <ul class="list-unstyled">
   <li><%= link_to 'Back', users_path %></li>
