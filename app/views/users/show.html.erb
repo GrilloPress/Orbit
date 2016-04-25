@@ -31,9 +31,13 @@
 </div>
 
 <% content_for :right_sidebar do %>
-<%= image_tag @user.profile_pic.url, class: "img-responsive img-circle" %>
+
+<% if @user.profile_pic.present? %>
+  <%= image_tag @user.profile_pic.url, class: "img-responsive img-circle" %>
+<% end %>
 
 <ul class="list-unstyled">
   <li><%= link_to 'Back', users_path %></li>
 </ul>
+
 <% end %>
