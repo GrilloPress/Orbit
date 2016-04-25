@@ -21,13 +21,10 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     
-    @editor = current_user.id
-    
-    unless @editor == @user
+    unless current_user.id == @user or current_user.admin?
       flash[:alert] = "You cannot edit that user"
       redirect_to @user
     end
-    
     
   end
 
