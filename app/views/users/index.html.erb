@@ -23,8 +23,8 @@
         <td><%= user.username %></td>
         <td><%= mail_to user.email, user.email %></td>
         <td><%= user.job_title %></td>
-        <td><%= link_to 'View profile', user %>, <%= link_to 'Edit profile', edit_user_path(user) %>, <%= link_to 'Delete profile', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to 'View profile', user %></td>        
+    </tr>
     <% end %>
   </tbody>
 </table>

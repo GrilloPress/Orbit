@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     
-    unless current_user.id == @user or current_user.admin?
+    unless current_user.id == @user.id or current_user.admin?
       flash[:alert] = "You cannot edit that user"
       redirect_to @user
     end
@@ -55,6 +55,12 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    
+    unless current_user.id == @user.id or current_user.admin?
+      flash[:alert] = "You cannot edit that user"
+      redirect_to @user
+    end
+    
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
