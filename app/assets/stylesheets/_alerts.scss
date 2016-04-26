@@ -12,3 +12,17 @@
     right: 0px;
   
 }
+
+.error-explanation {
+  
+  h2 {
+    
+    background-color: $brand-danger;
+    color: white;
+    padding: 5px;
+    
+  }
+  
+  color: $brand-danger;
+  
+}

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
   
   # validations
-  validates :biography, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed" }
+  validates :biography, length: { maximum: 1000, too_long: "- %{count} characters is the maximum allowed for this field" }
   validates :username, length: { minimum: 5 }
   validates :username, uniqueness: { case_sensitive: false }
   
