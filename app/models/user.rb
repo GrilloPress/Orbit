@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   
   def username_to_snake_case
     
-    self.username = username.tr(" ", "_")
+    self.username = username.strip.tr(" ", "_")
 
   end
   
