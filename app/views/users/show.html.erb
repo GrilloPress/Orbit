@@ -24,14 +24,14 @@
   <tbody>
       <tr>  
         <td><%= link_to @user.id, @user %></td>
-        <td><%= @user.email %></td>
+        <td><%= mail_to @user.email, @user.email %></td>
         <td><%= @user.job_title %></td>
         
         <td>
           <% if current_user.id == @user.id or current_user.admin? %>
             <%= link_to 'Edit profile', edit_user_path(@user) %>, <%= link_to 'Delete profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% else %>
-            N/A
+            &mdash;
           <% end %>
         </td>
       </tr>
