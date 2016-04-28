@@ -28,13 +28,12 @@
     </div>
     
     <div class="row">
-      <aside class="col-md-3 col-md-offset-1">
+      <aside class="col-md-3">
         <%= render 'shared/sidebar' %>
-        
         <%= yield :second_sidebar %>
       </aside>
       
-      <main class="col-md-8">
+      <main class="col-md-7">
         <%= yield %>
       </main>
 
