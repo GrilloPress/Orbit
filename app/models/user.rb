@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
   validates :username, length: { minimum: 5 }
   validates :username, uniqueness: { case_sensitive: false }
   
+  before_save { self.email = email.downcase }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+  
   protected
   
   def username_to_snake_case

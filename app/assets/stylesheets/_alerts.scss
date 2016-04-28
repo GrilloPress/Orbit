@@ -26,3 +26,18 @@
   color: $brand-danger;
   
 }
+
+.field_with_errors {
+  
+  label {
+    
+    color: $brand-danger;
+  }
+  
+  input {
+    
+    color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  
+}
