@@ -1,8 +1,13 @@
 <h1>Editing User <%= @user.id %> - <%= @user.username %></h1>
 
+<div class="alert alert-success" role="alert">
+  Looking to update your account or change your password? <%= link_to 'Edit your account here', edit_user_registration_path, class: "alert-link" %>
+</div>
+
 <%= render 'form' %>
 
 <br>
 
+<%= link_to 'Edit password', edit_user_registration_path %> |
 <%= link_to 'Back to user profile', @user %> |
 <%= link_to 'Back to contact directory', users_path %>

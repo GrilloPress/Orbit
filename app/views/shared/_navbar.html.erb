@@ -19,6 +19,15 @@
           <%= link_to "Contact directory", users_path %>
         </li>
       </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="<%= is_page_active(user_path(current_user.id)) %>">
+          <%= link_to "My profile", user_path(current_user.id) %>
+        </li>
+        <li class="<%= is_page_active(edit_user_path(current_user.id)) %>">
+          <%= link_to "Edit profile", edit_user_path(current_user.id) %>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
