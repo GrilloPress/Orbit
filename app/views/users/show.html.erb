@@ -29,7 +29,7 @@
         
         <td>
           <% if current_user.id == @user.id or current_user.admin? %>
-            <%= link_to 'Edit profile', edit_user_path(@user) %>, <%= link_to "Edit password", edit_user_registration_path %>, <%= link_to 'Delete profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit profile', edit_user_path(@user) %>, <%= link_to "Edit account", edit_user_registration_path %>, <%= link_to 'Delete profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% else %>
             &mdash;
           <% end %>
