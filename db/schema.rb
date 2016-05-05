@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505223244) do
+ActiveRecord::Schema.define(version: 20160505224608) do
 
   create_table "departments", force: :cascade do |t|
     t.string   "title"
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 20160505223244) do
     t.string   "profile_pic_content_type"
     t.integer  "profile_pic_file_size"
     t.datetime "profile_pic_updated_at"
+    t.integer  "department_id"
   end
 
+  add_index "users", ["department_id"], name: "index_users_on_department_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
