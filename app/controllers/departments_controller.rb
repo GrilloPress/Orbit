@@ -14,16 +14,29 @@ class DepartmentsController < ApplicationController
 
   # GET /departments/new
   def new
+    unless current_user.admin?
+      flash[:alert] = "You cannot edit that department. Please request an admin to fulfill your request"
+      redirect_to @departments
+    end
     @department = Department.new
   end
 
   # GET /departments/1/edit
   def edit
+    unless current_user.admin?
+      flash[:alert] = "You cannot edit that department. Please request an admin to fulfill your request"
+      redirect_to @departments
+    end
   end
 
   # POST /departments
   # POST /departments.json
   def create
+    unless current_user.admin?
+      flash[:alert] = "You cannot edit that department. Please request an admin to fulfill your request"
+      redirect_to @departments
+    end
+    
     @department = Department.new(department_params)
 
     respond_to do |format|
@@ -54,6 +67,12 @@ class DepartmentsController < ApplicationController
   # DELETE /departments/1
   # DELETE /departments/1.json
   def destroy
+    
+    unless current_user.admin?
+      flash[:alert] = "You cannot delete the department. Please request an admin to fulfill your request."
+      redirect_to @departments
+    end
+    
     @department.destroy
     respond_to do |format|
       format.html { redirect_to departments_url, notice: 'Department was successfully destroyed.' }
@@ -62,13 +81,11 @@ class DepartmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_department
       @department = Department.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def department_params
-      params.fetch(:department, {})
+      params.fetch(:department, {}).permit(:title, :description)
     end
 end
