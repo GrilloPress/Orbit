@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     root to: 'static_pages#index', as: :authenticated_root
     
     resources :users
+    resources :departments
     
   end
   root to: redirect('/users/sign_in')
