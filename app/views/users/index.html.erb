@@ -31,8 +31,6 @@
   
 </div>
 
-<% @users.each do |user| %>
-  <% if user.admin %>
-    <%= link_to 'Add new user', new_user_path %>
-  <% end %>
+<% if current_user.admin %>
+  <%= link_to 'New user', new_user_path %>
 <% end %>
