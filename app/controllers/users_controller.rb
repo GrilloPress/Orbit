@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    
   end
 
   # GET /users/new
@@ -20,6 +21,8 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    
+    @department = Department.all
     
     unless current_user.id == @user.id or current_user.admin?
       flash[:alert] = "You cannot edit that user"
@@ -40,8 +43,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         
-        # current_user = params[:id]
-        # if current_user.id == x || current_user.admin?
+        unless current_user.id == @user.id or current_user.admin?
+          flash[:alert] = "You cannot edit that user"
+          redirect_to @user
+        end
+
         
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
@@ -76,6 +82,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {}).permit(:username, :job_title, :email, :biography, :profile_pic, :admin)
+      params.fetch(:user, {}).permit(:username, :job_title, :email, :biography, :profile_pic, :admin, :department_id)
     end
 end

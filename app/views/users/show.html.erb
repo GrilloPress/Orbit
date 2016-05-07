@@ -4,7 +4,7 @@
 <% if @user.profile_pic.present? %>
   <%= image_tag @user.profile_pic(:thumb), class: "img-circle pull-left" %>
 <% end %>
-<p><%= @user.biography %></p>
+<p><%= @user.biography %> <%= @user.department_id %></p>
 <p class="clearfix"></p>
 
 <div class="panel panel-primary">

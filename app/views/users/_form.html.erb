@@ -55,6 +55,10 @@
     <%= f.text_area :biography, class: "form-control" %>
   </div>
 
+<%= f.select(:department_id) do %>
+  <%= options_from_collection_for_select(@department, "id", "title") %>
+<% end %>
+
   <div class="actions">
     <%= f.submit class: "btn btn-warning" %>
   </div>

@@ -26,9 +26,14 @@
     </thead>
 
     <tbody>
-        <tr>  
-          <td></td>
-          <td></td>
+      <tr>
+        <% @department.users.each do |user| %>
+        <td><%= user.id %></td>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+        <td><%= user.job_title %></td>
+        <% end %>
+
 
           <% if current_user.admin? %>
             <td>
