@@ -1,0 +1,9 @@
+.form-group {
+  
+  select {
+    
+     @extend .form-control;
+    
+  }
+  
+}
