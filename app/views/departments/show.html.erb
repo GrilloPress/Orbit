@@ -1,7 +1,43 @@
 <h1><%= @department.title %></h1>
 <hr>
-<div>
-  <%= @department.description %>  
+
+  <p><%= @department.description %></p>
+
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    Team members
+  </div>
+  <div class="panel-body">
+    ...
+  </div>
+  <table class="table ">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Job title</th>
+         <% if current_user.admin? %>
+         <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>  
+          <td></td>
+          <td></td>
+
+          <% if current_user.admin? %>
+            <td>
+            </td>
+          <% end %>
+          
+        </tr>
+    </tbody>
+  </table>
 </div>
 
 
