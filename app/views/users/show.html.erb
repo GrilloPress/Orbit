@@ -27,7 +27,7 @@
         <td><%= link_to @user.id, @user %></td>
         <td><%= mail_to @user.email, @user.email %></td>
         <td><%= @user.job_title %></td>
-        <td><%= link_to 'Department', department_path(@user.department_id) %></td>
+        <td><% if @user.department_id %><%= link_to 'Department', department_path(@user.department_id) %> <% end %></td>
         <td>
           <% if current_user.id == @user.id or current_user.admin? %>
             <%= link_to 'Edit profile', edit_user_path(@user) %>, <%= link_to "Edit account", edit_user_registration_path %>, <%= link_to 'Delete profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
