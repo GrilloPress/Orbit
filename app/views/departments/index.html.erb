@@ -19,7 +19,7 @@
       <% @departments.each do |department| %>
         <tr>
           <td><%= link_to department.id, department %></td>
-          <td><%= department.title %></td>
+          <td><%= link_to department.title, department_path(department) %></td>
           <td><%= department.description %></td>
           <td><%= link_to 'View department', department %></td>
         </tr>
