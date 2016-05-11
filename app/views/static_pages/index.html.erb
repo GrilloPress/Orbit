@@ -1,4 +1,9 @@
 <h1 class="page-header">Welcome to Orbit</h1>
+<hr>
+<% if current_user.profile_pic.present? %>
+  <%= image_tag current_user.profile_pic(:thumb), class: "img-circle pull-left" %>
+<% end %>
+<p class="lead">Hey <%= current_user.username %>, great to see you!</p>
 
 
 <% content_for :right_sidebar do %>
