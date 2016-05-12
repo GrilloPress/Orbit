@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   validates :biography, length: { maximum: 1000, too_long: "- %{count} characters is the maximum allowed for this field" }
   validates :username, length: { minimum: 5 }
   validates :username, uniqueness: { case_sensitive: false }
+  validates_associated :department 
   
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
