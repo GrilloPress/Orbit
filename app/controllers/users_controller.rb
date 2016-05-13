@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    
+    @department = Department.find(@user.department_id)
   end
 
   # GET /users/new
