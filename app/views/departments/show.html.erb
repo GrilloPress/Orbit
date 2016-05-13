@@ -3,7 +3,7 @@
 
 <p class="lead"><%= @department.description %></p>
 
-<% if @department.users %>
+<% if @department.users.any? %>
 <div class="panel panel-primary">
   <!-- Default panel contents -->
   <div class="panel-heading">
